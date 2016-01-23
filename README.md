@@ -3,7 +3,7 @@ ONLINE SHOP
 
 Author: Viktor Stärn
 
-Info: This is a template for an online "farm-style" shop.
+Info: This is a template for a responsive online "farm-style" shop.
 
 [Temporarily hosted at Cloud9](https://online-shop-viktorstarn.c9users.io/index.html) <br />
 
