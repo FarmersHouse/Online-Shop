@@ -1,0 +1,25 @@
+{
+  "name": "online-shop-angular",
+  "description": "Online \"farm-style\" shop.",
+  "main": "",
+  "authors": [
+    "Viktor Stärn <viktor.starn@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ViktorStarn/Online-Shop",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "/client/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-route": "~1.4.9"
+  }
+}

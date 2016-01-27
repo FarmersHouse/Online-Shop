@@ -3,9 +3,12 @@ ONLINE SHOP
 
 Author: Viktor Stärn
 
-Info: This is a template for a responsive online "farm-style" shop.
+Info: This is a template for a responsive online "farm-style" shop built using Bootstrap. I decided <br />
+to migrate to the MEAN stack and the site now runs on Node.js/Express.js and uses AngularJS to mimic<br />
+a single page application using routing and templates. AngularJS also sees to it that no markup gets<br /> 
+needlessly repeated across several HTML-pages. 
 
-[Temporarily hosted at Cloud9](https://online-shop-viktorstarn.c9users.io/index.html) <br />
+[Temporarily hosted at Cloud9](https://online-shop-angular-viktorstarn.c9users.io/index.html) <br />
 
 ![Screenshot 1](/screenshot1.png?raw=true "Screenshot 1") <br />
 ![Screenshot 2](/screenshot2.png?raw=true "Screenshot 2") <br />

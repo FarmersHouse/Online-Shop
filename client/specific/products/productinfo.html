@@ -1,0 +1,25 @@
+<div class="padding-vertical-small padding-horizontal-xsmall">
+    <div class="product-container padding-small border border-radius-decor">
+        <div class="product-image margin-auto">
+            <img ng-src="{{ value.imgUrl }}" alt="{{ value.imgAlt }}">
+        </div>
+        <p class="paragraph-normal padding-top-medium font-size-normal"> {{ value.title }} {{ value.weight }}</p>
+        <p class="paragraph-normal padding-top-medium bold font-size-large yellow-color"> {{ value.price }}</p>
+        <p class="paragraph-normal padding-bottom-small font-size-small">Jmfr.pris {{ value.comparativeprice }}kr/kg</p>
+        <div class="col-xs-12 padding-none">
+            <form class="form-inline float-left" action="#">
+                <div class="form-group">
+                    <div class="col-xs-2 padding-none">
+                        <input type="text" class="input-sm form-control border-radius" name="quantity" value="1" style="width:30px;height:23px;">
+                    </div>
+                    <label class="control-label col-xs-2">st</label>
+                    <input type="button" class="btn btn-warning btn-xs margin-left-xsmall col-xs-4" name="buy" value="Köp"> 
+                </div>
+            </form>
+            <div class="float-right angularController" ng-controller="productController">
+                <p class="float-right padding-left-xsmall" id="numberOfLikes">{{ value.likes }}</p>
+                <span class="btn glyphicon glyphicon-heart yellow-color float-right padding-none margin-none" id="glyphicon-heart" ng-click="incrementLikes(value)"></span>
+            </div>
+        </div>
+    </div>
+</div>

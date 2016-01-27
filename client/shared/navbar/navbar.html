@@ -1,0 +1,52 @@
+<!--Fixed toolbar/navigation bar - collapses on small devices-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header float-right">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hiddenCollapsingNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+        </div>
+        <div class="collapse navbar-collapse float-left" id="hiddenCollapsingNavbar">
+            <ul class="nav navbar-nav visible-xs">
+                <li><a href="#/home">Hem</a></li>
+                <li><a href="#/products">Produkter</a></li>
+                <li><a href="#/philosophy">Filosofi</a></li>
+                <li><a href="#/about">Om</a></li>
+                <li><a href="#/contact">Kontakt</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="visible-xs"><a href="#/register"><span class="glyphicon glyphicon-user"></span> Ny kund</a></li>
+                <li class="visible-xs"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Logga in</a></li>
+                <li class="hidden-xs"><a href="#"><span class="glyphicon glyphicon-flag"></span></a></li> 
+            </ul>
+        </div>
+        <div class="nav navbar-right float-right hidden-xs margin-right-xsmall text-align-right" id="account">
+            <a href="#/register" class="btn btn-warning btn-xs navbar-vertical-alignment">Ny kund</a>
+            <div class="btn-group">
+                <a href="#/login" class="btn btn-warning btn-xs dropdown-toggle navbar-vertical-alignment">Logga in</a>
+                <button type="button" class="btn btn-warning btn-xs dropdown-toggle navbar-vertical-alignment" data-toggle="dropdown">
+                <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" >
+                    <div class="col-sm-12">
+                        <div class="col-sm-12 font-size-normal padding-top-xsmall">
+                            Fyll i dina användaruppgifter:
+                        </div>
+                        <div class="col-sm-12 padding-top-xsmall">
+                            <input type="text" placeholder="Användarnamn" class="form-control input-sm" />
+                        </div>
+                        <br/>
+                        <div class="col-sm-12 padding-top-xsmall">
+                            <input type="password" placeholder="Lösenord" class="form-control input-sm" name="password" />
+                        </div>
+                        <div class="col-sm-12 text-align-right padding-top-xsmall padding-bottom-xsmall">
+                            <button type="submit" class="btn btn-warning btn-xs">Logga in</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

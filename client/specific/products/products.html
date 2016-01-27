@@ -1,0 +1,13 @@
+<div ng-controller="productController">
+    <div class="row">
+        <!--Loop through the products-->
+        <div ng-repeat="product in products">
+            <!--Four products per row-->
+            <div class="clearfix" ng-if="$index % 4 == 0"></div>
+            <div class="col-lg-3 col-sm-6">
+                <!--Present product information using information in current products entry-->
+                <product-info value="product"></product-info>
+            </div>
+        </div>
+    </div>
+</div>
