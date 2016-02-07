@@ -7,8 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var mongoose = require('mongoose');
+var databaseName = 'gardsbutik';
 
 var app = express();
+
+// MongoDB
+/*var MongoClient = require('mongodb').MongoClient,
+    assert = require('assert');
+var ObjectID = require('mongodb').ObjectID;
+var url = 'mongodb://127.0.0.1:27017/gardsbutik';*/
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -33,6 +41,13 @@ app.use(function(req, res, next) {
 
 // error handlers
 
+// MongoDB
+/*MongoClient.connect(url, function(err,db) {
+  assert.equal(null, err);
+  console.log("Connected to database.");
+  return db.close();
+})*/
+
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -54,6 +69,14 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+/* Database */
+mongoose.connect('mongodb://localhost/' + databaseName);
+
+var db = mongoose.connection;
+db.on('error', console.error);
+
 
 
 module.exports = app;
