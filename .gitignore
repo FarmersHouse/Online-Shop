@@ -4,8 +4,7 @@ node_modules/
 #Angular core components
 client/components/
 
-#Jade
-server/views/
+
 
 
 
