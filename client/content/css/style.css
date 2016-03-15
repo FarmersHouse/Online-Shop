@@ -100,6 +100,19 @@ body {
 
 .navlink {
     color: black;
+    font-size: 1em;
+    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+}
+
+.navlink:hover {
+    font-size: 1.2em;
+}
+
+.navlink:active {
+    font-size: 1.0em;
 }
 
 /* Site skeleton - Footer that flushes down to bottom of page */
@@ -123,6 +136,7 @@ body {
 
 .product-container {
     display: inline-block;
+    min-width: 190px;
 }
 
 .product-image {
@@ -156,6 +170,58 @@ body {
 
 
 /* Site sections - Register */
+
+.nav-tabs {
+    border-color: transparent;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+    background-color: #cccccc;
+}
+
+#html5 input[type="text"]:focus:invalid, #html5 input[type="email"]:focus:invalid, #html5 input[type="password"]:focus:invalid {
+    border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    background-image: url(/content/icon/glyph_has_error.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+#html5 input[type="text"]:required:valid, #html5 input[type="email"]:required:valid, #html5 input[type="password"]:required:valid {
+    border-color: #3c763d;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    background-image: url(/content/icon/glyph_has_success.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+#html5 input[type="text"]:focus:valid, #html5 input[type="email"]:focus:valid, #html5 input[type="password"]:focus:valid {
+    border-color: #2b542c;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+    background-image: url(/content/icon/glyph_has_success.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.help {
+    display: none;
+    color: #B22222;
+}
+
+#html5 input:focus:invalid + .help {
+    display: block;
+}
+
+.code-modal-body {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap:normal;
+}
 
 
 /* Site sections - Login */
@@ -511,7 +577,19 @@ body {
     border-radius: 1.5em 4em 0.5em 0.5em;
 }
 
+.border-radius-tabs {
+    border-radius: 0em 0.5em 0.5em 0.5em;
+}
+
 /* Shared markup - Font */
+
+.font-family-arial {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.font-family-garamond {
+    font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+}
 
 .bold {
     font-weight: bold;
@@ -539,6 +617,10 @@ body {
     float: right;
 }
 
+.clear-both {
+    clear: both;
+}
+
 .text-align-center {
     text-align: center;
 }
@@ -555,9 +637,8 @@ body {
     text-align: justify;
 }
 
-.display-inline-block {
-    display: inline-block;
-    height: 100%; 
+.display-none {
+    display: none;
 }
 
 .display-block {
@@ -566,6 +647,11 @@ body {
 
 .display-inline {
     display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+    height: 100%; 
 }
 
 .display-table {
@@ -666,4 +752,5 @@ a, img {
     border: none;
     outline: none
 }
+
 

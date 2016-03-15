@@ -1,0 +1,268 @@
+<div class="container-main-content display-inline-block padding-medium">
+    <p class="margin-none padding-none padding-bottom-medium">
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    </p>
+    <div class="visible-lg">
+        <div class="float-left padding-none padding-left-medium">
+            <ul class="nav nav-tabs">
+                <li><a href="#/register_html5"><img src="/content/icon/html5_small.png" onload="onloadFunctionJQuery()" alt="HTML5"></a></li>
+                <li><a href="#/register_js"><img src="/content/icon/js_small.png" alt="JavaScript"></a></li>
+                <li class="active"><a href="#/register_jquery"><img src="/content/icon/jquery_small.png" alt="JQuery"></a></li>
+                <li><a href="#/register_angularjs"><img src="/content/icon/angularjs_small.png" alt="AngularJS"></a></li>
+            </ul>
+        </div>
+        <div class="float-right padding-none padding-right-medium" style="height: 60px;">
+            <div class="display-table">
+                <div class="display-table-cell-bottom">
+                    <p style="color:#B22222;">!!Under Construction!!<br></p>
+                    <input type="button" class="btn btn-default btn-xs" value="Source Code" data-toggle="modal" data-target="#codeModal">
+                    <input type="button" class="btn btn-default btn-xs" value="Info" data-toggle="modal" data-target="#infoModal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-both">
+        <form name="userForm" class="text-align-left border border-radius gray-bgcolor margin-medium padding-medium" id="user_form_jquery">
+            <fieldset class="border-none display-block" id="fieldset_text_fields_registration_form">
+                <div class="form-group has-feedback" id="firstname_div">
+                    <label>Förnamn *</label>
+                    <input type="text" class="form-control border-radius" id="firstname_input" name="firstname" placeholder="Fyll i ditt förnamn">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="firstname_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="firstname_valid"></i>
+                    <p class="display-none help-block" id="firstname_invalid_message">Glöm inte att fylla i ditt förnamn.</p>
+                </div>
+                <div class="form-group has-feedback" id="lastname_div">
+                    <label>Efternamn *</label>
+                    <input type="text" class="form-control border-radius" id="lastname_input" name="lastname" placeholder="Fyll i ditt efternamn">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="lastname_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="lastname_valid"></i>
+                    <p class="display-none help-block" id="lastname_invalid_message">Glöm inte att fylla i ditt efternamn.</p>
+                </div>
+                <div class="form-group has-feedback" id="address_div">
+                    <label>Adress *</label>
+                    <input type="text" class="form-control border-radius" id="address_input" name="address" placeholder="Fyll i din adress">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="address_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="address_valid"></i>
+                    <p class="display-none help-block" id="address_invalid_message">Glöm inte att fylla i din adress.</p>
+                </div>
+                <div class="form-group has-feedback" id="postalcode_div">
+                    <label>Postnummer *</label>
+                    <input type="text" class="form-control border-radius" id="postalcode_input" name="postalcode" placeholder="Fyll i ditt postnummer">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="postalcode_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="postalcode_valid"></i>
+                    <p class="display-none help-block" id="postalcode_invalid_message">Fyll i ditt postnummer (fem siffror).</p>
+                </div>
+                <div class="form-group has-feedback" id="city_div">
+                    <label>Ort *</label>
+                    <input type="text" class="form-control border-radius" id="city_input" name="city" placeholder="Fyll i din hemort">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="city_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="city_valid"></i>
+                    <p class="display-none help-block" id="city_invalid_message">Glöm inte att fylla i din hemort.</p>
+                </div>
+                <div class="form-group">
+                    <label>Telefonnummer </label>
+                    <input type="text" class="form-control border-radius" name="phone_nr" placeholder="Fyll i ditt telefonnummer">
+                </div>
+                <div class="form-group has-feedback" id="email_div">
+                    <label>E-postadress *</label>
+                    <input type="email" class="form-control border-radius form-control-danger" id="email_input" name="email" placeholder="Fyll i din e-postadress">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="email_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="email_valid"></i>
+                    <p class="display-none help-block" id="email_invalid_message">Ogiltig e-postadress.</p>
+                </div>
+                <div class="form-group has-feedback" id="emailconfirm_div">
+                    <label>Bekräfta e-postadress *</label>
+                    <input type="email" class="form-control border-radius" id="emailconfirm_input" name="emailconfirm" placeholder="Bekräfta din e-postadress">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="emailconfirm_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="emailconfirm_valid"></i>
+                    <p class="display-none help-block" id="emailconfirm_invalid_message">E-postadresserna stämmer inte överens.</p>
+                </div>
+                <div class="form-group has-feedback" id="password_div">
+                    <label>Lösenord *</label>
+                    <input type="password" class="form-control border-radius" id="password_input" name="password" placeholder="Välj ett lösenord">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="password_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="password_valid"></i>
+                    <p class="display-none help-block" id="password_invalid_message">Lösenordet måste innehålla som minst 8 och som mest 15 tecken, <br>varav minst en stor och en liten bokstav samt en siffra.</p>
+                </div>
+                <div class="form-group has-feedback" id="passwordconfirm_div">
+                    <label>Bekräfta lösenord *</label>
+                    <input type="password" class="form-control border-radius" id="passwordconfirm_input" name="passwordconfirm" placeholder="Bekräfta ditt lösenord">
+                    <i class="display-none glyphicon glyphicon-remove form-control-feedback" id="passwordconfirm_invalid"></i>
+                    <i class="display-none glyphicon glyphicon-ok form-control-feedback" id="passwordconfirm_valid"></i>
+                    <p class="display-none help-block" id="passwordconfirm_invalid_message">Lösenorden stämmer inte överens.</p>
+                </div>
+            </fieldset>
+            <fieldset class="border-none text-align-left form_padding_large">
+                <br><input type="checkbox"> Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. <br>
+                <input type="checkbox" name="consent" id="consent_input"> Jag accepterar att gårdsbutiken <a href="#">lagrar mina personuppgifter</a>. *<br>
+                <br><p>* = Obligatoriskt fält</p>
+            </fieldset>
+            <fieldset class="border-none text-align-center padding-top-medium">
+                <input type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka">
+                <input type="submit" class="btn btn-warning" id="submit_button_jquery" name="submit_registration_form" value="Registrera" disabled>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!-- Modal displaying explanation -->
+<div id="infoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Real-time client-side form validation: JQuery
+                </h2>
+            </div>
+            <div class="modal-body">
+                <p class="padding-small margin-small font-family-arial text-align-justify">
+                    
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for displaying the source code of the page -->
+<div id="codeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Source Code
+                </h2>
+            </div>
+            <div class="modal-body text-align-left">
+                <h3 class="padding-xsmall font-family-garamond">
+                    HTML
+                </h3>
+                <pre class="code-modal-body">
+&ltdiv class="container-main-content display-inline-block padding-medium"&gt
+    &ltp class="margin-none padding-none padding-bottom-medium"&gt
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    &lt/p&gt
+    &ltdiv class="visible-lg"&gt
+        &ltdiv class="float-left padding-none padding-left-medium"&gt
+            &ltul class="nav nav-tabs"&gt
+                &lt!--Due to compatibility issues between AngularJS and vanilla JavaScript I had to place the onload-function on an image element instead on the window object.--&gt
+                &ltli&gt&lta href="#/register_html5"&gt&ltimg src="/content/icon/html5_small.png" onload="onloadFunction()" alt="HTML5"&gt&lt/a&gt&lt/li&gt
+                &ltli class="active"&gt&lta href="#/register_js"&gt&ltimg src="/content/icon/js_small.png" alt="JavaScript"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_jquery"&gt&ltimg src="/content/icon/jquery_small.png" alt="JQuery"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_angularjs"&gt&ltimg src="/content/icon/angularjs_small.png" alt="AngularJS"&gt&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+        &ltdiv class="float-right padding-none padding-right-medium" style="height: 60px;"&gt
+            &ltdiv class="display-table"&gt
+                &ltdiv class="display-table-cell-bottom"&gt
+                    &lta target="_blank" href="" onclick="window.open('view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/register_js.html');window.open('view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/js.js');" class="btn btn-warning btn-xs margin-left-small" title="Glöm inte tillåta popups!"&gtVisa sidkällor&lt/a&gt
+                    &ltinput type="button" class="btn btn-warning btn-xs" value="Förklaring" data-toggle="modal" data-target="#infoModal"&gt
+                &lt/div&gt
+            &lt/div&gt
+        &lt/div&gt
+    &lt/div&gt
+    &ltdiv class="clear-both"&gt
+        &ltform onsubmit="SubmitFunction()" name="userForm" class="text-align-left border border-radius gray-bgcolor margin-medium padding-medium"&gt
+            &ltfieldset class="border-none display-block" id="fieldset_text_fields_registration_form"&gt
+                &ltdiv class="form-group has-feedback" id="firstname_div"&gt
+                    &ltlabel&gtFörnamn *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" id="firstname_input" name="firstname" placeholder="Fyll i ditt förnamn"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="firstname_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="firstname_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="firstname_invalid_message"&gtGlöm inte att fylla i ditt förnamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="lastname_div"&gt
+                    &ltlabel&gtEfternamn *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" id="lastname_input" name="lastname" placeholder="Fyll i ditt efternamn"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="lastname_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="lastname_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="lastname_invalid_message"&gtGlöm inte att fylla i ditt efternamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="address_div"&gt
+                    &ltlabel&gtAdress *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" id="address_input" name="address" placeholder="Fyll i din adress"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="address_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="address_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="address_invalid_message"&gtGlöm inte att fylla i din adress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="postalcode_div"&gt
+                    &ltlabel&gtPostnummer *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" id="postalcode_input" name="postalcode" placeholder="Fyll i ditt postnummer"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="postalcode_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="postalcode_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="postalcode_invalid_message"&gtFyll i ditt postnummer (fem siffror).&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="city_div"&gt
+                    &ltlabel&gtOrt *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" id="city_input" name="city" placeholder="Fyll i din hemort"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="city_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="city_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="city_invalid_message"&gtGlöm inte att fylla i din hemort.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtTelefonnummer &lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="phone_nr" placeholder="Fyll i ditt telefonnummer"&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="email_div"&gt
+                    &ltlabel&gtE-postadress *&lt/label&gt
+                    &ltinput type="email" class="form-control border-radius form-control-danger" id="email_input" name="email" placeholder="Fyll i din e-postadress"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="email_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="email_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="email_invalid_message"&gtOgiltig e-postadress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="emailconfirm_div"&gt
+                    &ltlabel&gtBekräfta e-postadress *&lt/label&gt
+                    &ltinput type="email" class="form-control border-radius" id="emailconfirm_input" name="emailconfirm" placeholder="Bekräfta din e-postadress"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="emailconfirm_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="emailconfirm_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="emailconfirm_invalid_message"&gtE-postadresserna stämmer inte överens.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="password_div"&gt
+                    &ltlabel&gtLösenord *&lt/label&gt
+                    &ltinput type="password" class="form-control border-radius" id="password_input" name="password" placeholder="Välj ett lösenord"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="password_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="password_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="password_invalid_message"&gtLösenordet måste innehålla som minst 8 och som mest 15 tecken, &ltbr&gtvarav minst en stor och en liten bokstav samt en siffra.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" id="passwordconfirm_div"&gt
+                    &ltlabel&gtBekräfta lösenord *&lt/label&gt
+                    &ltinput type="password" class="form-control border-radius" id="passwordconfirm_input" name="passwordconfirm" placeholder="Bekräfta ditt lösenord"&gt
+                    &lti class="display-none glyphicon glyphicon-remove form-control-feedback" id="passwordconfirm_invalid"&gt&lt/i&gt
+                    &lti class="display-none glyphicon glyphicon-ok form-control-feedback" id="passwordconfirm_valid"&gt&lt/i&gt
+                    &ltp class="display-none help-block" id="passwordconfirm_invalid_message"&gtLösenorden stämmer inte överens.&lt/p&gt
+                &lt/div&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-left form_padding_large"&gt
+                &ltbr&gt&ltinput type="checkbox"&gt Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. &ltbr&gt
+                &ltinput type="checkbox" name="consent" id="consent_input"&gt Jag accepterar att gårdsbutiken &lta href="#"&gtlagrar mina personuppgifter&lt/a&gt. *&ltbr&gt
+                &ltbr&gt&ltp&gt* = Obligatoriskt fält&lt/p&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-center padding-top-medium"&gt
+                &ltinput type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka"&gt
+                &ltinput type="submit" class="btn btn-warning" name="submit_registration_form" value="Registrera"&gt
+            &lt/fieldset&gt
+        &lt/form&gt
+    &lt/div&gt
+&lt/div&gt
+                </pre>
+                    <h3 class="padding-xsmall font-family-garamond">
+                        <br>
+                        JavaScript
+                    </h3>
+                <pre class="code-modal-body">
+
+                </pre>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

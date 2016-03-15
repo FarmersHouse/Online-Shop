@@ -11,7 +11,7 @@
         var service = {
             getProducts: getProducts,
             updateProduct: updateProduct
-        };
+        }
         return service;
         
         function getProducts(){

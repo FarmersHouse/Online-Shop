@@ -1,0 +1,303 @@
+<div class="container-main-content display-inline-block padding-medium" ng-controller="registerController">
+    <p class="margin-none padding-none padding-bottom-medium">
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    </p>
+    <div class="visible-lg">
+        <div class="float-left padding-none padding-left-medium">
+            <ul class="nav nav-tabs">
+                <li><a href="#/register_html5"><img src="/content/icon/html5_small.png" alt="HTML5"></a></li>
+                <li><a href="#/register_js"><img src="/content/icon/js_small.png" alt="JavaScript"></a></li>
+                <li><a href="#/register_jquery"><img src="/content/icon/jquery_small.png" alt="JQuery"></a></li>
+                <li class="active"><a href="#/register_angularjs"><img src="/content/icon/angularjs_small.png" alt="AngularJS"></a></li>
+            </ul>
+        </div>
+        <div class="float-right padding-none padding-right-medium" style="height: 60px;">
+            <div class="display-table">
+                <div class="display-table-cell-bottom">
+                    <input type="button" class="btn btn-default btn-xs" value="Source Code" data-toggle="modal" data-target="#codeModal">
+                    <input type="button" class="btn btn-default btn-xs" value="Info" data-toggle="modal" data-target="#infoModal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-both">
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="text-align-left border border-radius gray-bgcolor margin-medium padding-medium">
+            <fieldset class="border-none display-block" id="fieldset_text_fields_registration_form">
+                <!-- 'ng-class' adds Bootstrap style classes 'has-error' or 'has-success' depending on the outcome of the validation logic. -->
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.firstname.$pristine && userForm.firstname.$invalid, 'has-success' : !userForm.firstname.$pristine && userForm.firstname.$valid }">
+                    <label>Förnamn *</label>
+                    <!-- The 'ng-model' directive binds the value of HTML controls (input, select, textarea) to application data. 'required' states that the user is required to fill in that particular field. -->
+                    <input type="text" class="form-control border-radius" name="firstname" ng-model="firstname" placeholder="Fyll i ditt förnamn" required>
+                    <!-- 'ng-show' hides or shows below glyphicons and paragraph depending on the outcome of the validation logic. -->
+                    <i ng-show="!userForm.firstname.$pristine && userForm.firstname.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.firstname.$pristine && userForm.firstname.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.firstname.$pristine && userForm.firstname.$invalid" class="help-block">Glöm inte att fylla i ditt förnamn.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.lastname.$pristine && userForm.lastname.$invalid, 'has-success' : !userForm.lastname.$pristine && userForm.lastname.$valid }">
+                    <label>Efternamn *</label>
+                    <input type="text" class="form-control border-radius" name="lastname" ng-model="lastname" placeholder="Fyll i ditt efternamn" required>
+                    <i ng-show="!userForm.lastname.$pristine && userForm.lastname.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.lastname.$pristine && userForm.lastname.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.lastname.$pristine && userForm.lastname.$invalid" class="help-block">Glöm inte att fylla i ditt efternamn.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.address.$pristine && userForm.address.$invalid, 'has-success' : !userForm.address.$pristine && userForm.address.$valid }">
+                    <label>Adress *</label>
+                    <input type="text" class="form-control border-radius" name="address" ng-model="address" placeholder="Fyll i din adress" required>
+                    <i ng-show="!userForm.address.$pristine && userForm.address.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.address.$pristine && userForm.address.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.address.$pristine && userForm.address.$invalid" class="help-block">Glöm inte att fylla i din adress.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : userForm.postalcode.$invalid && !userForm.postalcode.$pristine, 'has-success' : !userForm.postalcode.$pristine && userForm.postalcode.$valid }">
+                    <label>Postnummer *</label>
+                    <!-- 'ng-pattern' validates the user input against a regular expression. -->
+                    <input type="text" class="form-control border-radius" name="postalcode" ng-model="postalcode" ng-pattern="/^(\d{5}-\d{4}|\d{5})$/" placeholder="Fyll i ditt postnummer" required>
+                    <i ng-show="!userForm.postalcode.$pristine && userForm.postalcode.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.postalcode.$pristine && userForm.postalcode.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="userForm.postalcode.$invalid && !userForm.postalcode.$pristine" class="help-block">Fyll i ditt postnummer (fem siffror).</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.city.$pristine && userForm.city.$invalid, 'has-success' : !userForm.city.$pristine && userForm.city.$valid }">
+                    <label>Ort *</label>
+                    <input type="text" class="form-control border-radius" name="city" ng-model="city" placeholder="Fyll i din hemort" required>
+                    <i ng-show="!userForm.city.$pristine && userForm.city.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.city.$pristine && userForm.city.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.city.$pristine && userForm.city.$invalid" class="help-block">Glöm inte att fylla i din hemort.</p>
+                </div>
+                <div class="form-group">
+                    <label>Telefonnummer </label>
+                    <input type="text" class="form-control border-radius" name="phone_nr" ng-model="phone_nr" placeholder="Fyll i ditt telefonnummer">
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine, 'has-success' : !userForm.email.$pristine && userForm.email.$valid }">
+                    <label>E-postadress *</label>
+                    <!-- In AngularJS type="email" has built in validation logic. -->
+                    <input type="email" class="form-control border-radius form-control-danger" name="email" ng-model="email" placeholder="Fyll i din e-postadress" required>
+                    <i ng-show="!userForm.email.$pristine && userForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.email.$pristine && userForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Ogiltig e-postadress.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.emailconfirm.$pristine && userForm.emailconfirm.$error.match, 'has-success' : !userForm.emailconfirm.$pristine && !userForm.emailconfirm.$error.match }">
+                    <label>Bekräfta e-postadress *</label>
+                    <!-- 'match="email"' checks for a match between user input in emailconfirm textfield and user input in email textfield (dependent on: 'angular-validation-match'.) -->
+                    <input type="email" class="form-control border-radius" name="emailconfirm" ng-model="emailconfirm" match="email" placeholder="Bekräfta din e-postadress" required>
+                    <i ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$error.match" class="help-block">E-postadresserna stämmer inte överens.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.password.$pristine && userForm.password.$error.minlength || !userForm.password.$pristine && userForm.password.$error.maxlength, 'has-success' : !userForm.password.$pristine && userForm.password.$valid }">
+                    <label>Lösenord *</label>
+                    <!-- 'ng-minlength' and 'ng-maxlength' states minimum and maximum length of user input. -->
+                    <input type="password" class="form-control border-radius" name="password" ng-model="password" ng-minlength="8" ng-maxlength="15" placeholder="Välj ett lösenord" required>
+                    <i ng-show="!userForm.password.$pristine && userForm.password.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.password.$pristine && userForm.password.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.password.$pristine && userForm.password.$error.minlength" class="help-block">Lösenordet måste vara minst 8 tecken långt.</p>
+                    <p ng-show="!userForm.password.$pristine && userForm.password.$error.maxlength" class="help-block">Lösenordet får inte vara längre än 15 tecken.</p>
+                </div>
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$error.match, 'has-success' : !userForm.passwordconfirm.$pristine && !userForm.passwordconfirm.$error.match }">
+                    <label>Bekräfta lösenord *</label>
+                    <input type="password" class="form-control border-radius" name="passwordconfirm" ng-model="passwordconfirm" match="password" placeholder="Bekräfta ditt lösenord" required>
+                    <i ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></i>
+                    <i ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$valid" class="glyphicon glyphicon-ok form-control-feedback"></i>
+                    <p ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$error.match" class="help-block">Lösenorden stämmer inte överens.</p>
+                </div>
+            </fieldset>
+            <fieldset class="border-none text-align-left form_padding_large">
+                <br><input type="checkbox"> Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. <br>
+                <input type="checkbox" ng-model="terms" required> Jag accepterar att gårdsbutiken <a href="#">lagrar mina personuppgifter</a>. *<br>
+                <br><p>* = Obligatoriskt fält</p>
+            </fieldset>
+            <fieldset class="border-none text-align-center padding-top-medium">
+                <input type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka">
+                <input type="submit" class="btn btn-warning" name="submit_registration_form" value="Registrera" ng-disabled="userForm.$invalid">
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for displaying explanation -->
+<div id="infoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Real-time client-side form validation: AngularJS
+                </h2>
+            </div>
+            <div class="modal-body">
+                <p class="padding-small margin-small font-family-arial text-align-justify">
+                    AngularJS has all the tools required to implement real-time form validation on the client side. The implementation process is intuitive and less
+                    time consuming compared to JavaScript.
+                    Lines of code (markup languages excluded, inline code included): 60.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Modal for displaying the source code of the page -->
+<div id="codeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Source Code
+                </h2>
+            </div>
+            <div class="modal-body text-align-left">
+                <h3 class="padding-xsmall font-family-garamond">
+                    HTML/AngularJS
+                </h3>
+                <pre class="code-modal-body">
+&ltdiv class="container-main-content display-inline-block padding-medium" ng-controller="registerController"&gt
+    &ltp class="margin-none padding-none padding-bottom-medium"&gt
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    &lt/p&gt
+    &ltdiv class="visible-lg"&gt
+        &ltdiv class="float-left padding-none padding-left-medium"&gt
+            &ltul class="nav nav-tabs"&gt
+                &ltli&gt&lta href="#/register_html5"&gt&ltimg src="/content/icon/html5_small.png" alt="HTML5"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_js"&gt&ltimg src="/content/icon/js_small.png" alt="JavaScript"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_jquery"&gt&ltimg src="/content/icon/jquery_small.png" alt="JQuery"&gt&lt/a&gt&lt/li&gt
+                &ltli class="active"&gt&lta href="#/register_angularjs"&gt&ltimg src="/content/icon/angularjs_small.png" alt="AngularJS"&gt&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+        &ltdiv class="float-right padding-none padding-right-medium" style="height: 60px;"&gt
+            &ltdiv class="display-table"&gt
+                &ltdiv class="display-table-cell-bottom"&gt
+                    &lta target="_blank" href="" onclick="window.open('view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/register_angularjs.html');window.open('view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/register.controller.js');" class="btn btn-warning btn-xs margin-left-small" title="Glöm inte tillåta popups!"&gtVisa sidkällor&lt/a&gt
+                    &ltinput type="button" class="btn btn-warning btn-xs" value="Förklaring" data-toggle="modal" data-target="#infoModal"&gt
+                &lt/div&gt
+            &lt/div&gt
+        &lt/div&gt
+    &lt/div&gt
+    &ltdiv class="clear-both"&gt
+        &ltform name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="text-align-left border border-radius gray-bgcolor margin-medium padding-medium"&gt
+            &ltfieldset class="border-none display-block" id="fieldset_text_fields_registration_form"&gt
+                &lt!-- 'ng-class' adds Bootstrap style classes 'has-error' or 'has-success' depending on the outcome of the validation logic. --&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.firstname.$pristine && userForm.firstname.$invalid, 'has-success' : !userForm.firstname.$pristine && userForm.firstname.$valid }"&gt
+                    &ltlabel&gtFörnamn *&lt/label&gt
+                    &lt!-- The 'ng-model' directive binds the value of HTML controls (input, select, textarea) to application data. 'required' states that the user is required to fill in that particular field. --&gt
+                    &ltinput type="text" class="form-control border-radius" name="firstname" ng-model="firstname" placeholder="Fyll i ditt förnamn" required&gt
+                    &lt!-- 'ng-show' hides or shows below glyphicons and paragraph depending on the outcome of the validation logic. --&gt
+                    &lti ng-show="!userForm.firstname.$pristine && userForm.firstname.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.firstname.$pristine && userForm.firstname.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.firstname.$pristine && userForm.firstname.$invalid" class="help-block"&gtGlöm inte att fylla i ditt förnamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.lastname.$pristine && userForm.lastname.$invalid, 'has-success' : !userForm.lastname.$pristine && userForm.lastname.$valid }"&gt
+                    &ltlabel&gtEfternamn *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="lastname" ng-model="lastname" placeholder="Fyll i ditt efternamn" required&gt
+                    &lti ng-show="!userForm.lastname.$pristine && userForm.lastname.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.lastname.$pristine && userForm.lastname.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.lastname.$pristine && userForm.lastname.$invalid" class="help-block"&gtGlöm inte att fylla i ditt efternamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.address.$pristine && userForm.address.$invalid, 'has-success' : !userForm.address.$pristine && userForm.address.$valid }"&gt
+                    &ltlabel&gtAdress *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="address" ng-model="address" placeholder="Fyll i din adress" required&gt
+                    &lti ng-show="!userForm.address.$pristine && userForm.address.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.address.$pristine && userForm.address.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.address.$pristine && userForm.address.$invalid" class="help-block"&gtGlöm inte att fylla i din adress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : userForm.postalcode.$invalid && !userForm.postalcode.$pristine, 'has-success' : !userForm.postalcode.$pristine && userForm.postalcode.$valid }"&gt
+                    &ltlabel&gtPostnummer *&lt/label&gt
+                    &lt!-- 'ng-pattern' validates the user input against a regular expression. --&gt
+                    &ltinput type="text" class="form-control border-radius" name="postalcode" ng-model="postalcode" ng-pattern="/^(\d{5}-\d{4}|\d{5})$/" placeholder="Fyll i ditt postnummer" required&gt
+                    &lti ng-show="!userForm.postalcode.$pristine && userForm.postalcode.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.postalcode.$pristine && userForm.postalcode.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="userForm.postalcode.$invalid && !userForm.postalcode.$pristine" class="help-block"&gtFyll i ditt postnummer (fem siffror).&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.city.$pristine && userForm.city.$invalid, 'has-success' : !userForm.city.$pristine && userForm.city.$valid }"&gt
+                    &ltlabel&gtOrt *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="city" ng-model="city" placeholder="Fyll i din hemort" required&gt
+                    &lti ng-show="!userForm.city.$pristine && userForm.city.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.city.$pristine && userForm.city.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.city.$pristine && userForm.city.$invalid" class="help-block"&gtGlöm inte att fylla i din hemort.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtTelefonnummer &lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="phone_nr" ng-model="phone_nr" placeholder="Fyll i ditt telefonnummer"&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine, 'has-success' : !userForm.email.$pristine && userForm.email.$valid }"&gt
+                    &ltlabel&gtE-postadress *&lt/label&gt
+                    &lt!-- In AngularJS type="email" has built in validation logic. --&gt
+                    &ltinput type="email" class="form-control border-radius form-control-danger" name="email" ng-model="email" placeholder="Fyll i din e-postadress" required&gt
+                    &lti ng-show="!userForm.email.$pristine && userForm.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.email.$pristine && userForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"&gtOgiltig e-postadress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.emailconfirm.$pristine && userForm.emailconfirm.$error.match, 'has-success' : !userForm.emailconfirm.$pristine && !userForm.emailconfirm.$error.match }"&gt
+                    &ltlabel&gtBekräfta e-postadress *&lt/label&gt
+                    &lt!-- 'match="email"' checks for a match between user input in emailconfirm textfield and user input in email textfield (dependent on: 'angular-validation-match'.) --&gt
+                    &ltinput type="email" class="form-control border-radius" name="emailconfirm" ng-model="emailconfirm" match="email" placeholder="Bekräfta din e-postadress" required&gt
+                    &lti ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.emailconfirm.$pristine && userForm.emailconfirm.$error.match" class="help-block"&gtE-postadresserna stämmer inte överens.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.password.$pristine && userForm.password.$error.minlength || !userForm.password.$pristine && userForm.password.$error.maxlength, 'has-success' : !userForm.password.$pristine && userForm.password.$valid }"&gt
+                    &ltlabel&gtLösenord *&lt/label&gt
+                    &lt!-- 'ng-minlength' and 'ng-maxlength' states minimum and maximum length of user input. --&gt
+                    &ltinput type="password" class="form-control border-radius" name="password" ng-model="password" ng-minlength="8" ng-maxlength="15" placeholder="Välj ett lösenord" required&gt
+                    &lti ng-show="!userForm.password.$pristine && userForm.password.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.password.$pristine && userForm.password.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.password.$pristine && userForm.password.$error.minlength" class="help-block"&gtLösenordet måste vara minst 8 tecken långt.&lt/p&gt
+                    &ltp ng-show="!userForm.password.$pristine && userForm.password.$error.maxlength" class="help-block"&gtLösenordet får inte vara längre än 15 tecken.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group has-feedback" ng-class="{ 'has-error' : !userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$error.match, 'has-success' : !userForm.passwordconfirm.$pristine && !userForm.passwordconfirm.$error.match }"&gt
+                    &ltlabel&gtBekräfta lösenord *&lt/label&gt
+                    &ltinput type="password" class="form-control border-radius" name="passwordconfirm" ng-model="passwordconfirm" match="password" placeholder="Bekräfta ditt lösenord" required&gt
+                    &lti ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$invalid" class="glyphicon glyphicon-remove form-control-feedback"&gt&lt/i&gt
+                    &lti ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$valid" class="glyphicon glyphicon-ok form-control-feedback"&gt&lt/i&gt
+                    &ltp ng-show="!userForm.passwordconfirm.$pristine && userForm.passwordconfirm.$error.match" class="help-block"&gtLösenorden stämmer inte överens.&lt/p&gt
+                &lt/div&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-left form_padding_large"&gt
+                &ltbr&gt&ltinput type="checkbox"&gt Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. &ltbr&gt
+                &ltinput type="checkbox" ng-model="terms" required&gt Jag accepterar att gårdsbutiken &lta href="#"&gtlagrar mina personuppgifter&lt/a&gt. *&ltbr&gt
+                &ltbr&gt&ltp&gt* = Obligatoriskt fält&lt/p&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-center padding-top-medium"&gt
+                &ltinput type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka"&gt
+                &ltinput type="submit" class="btn btn-warning" name="submit_registration_form" value="Registrera" ng-disabled="userForm.$invalid"&gt
+            &lt/fieldset&gt
+        &lt/form&gt
+    &lt/div&gt
+&lt/div&gt
+                </pre>
+                    <h3 class="padding-xsmall font-family-garamond">
+                        <br>
+                        AngularJS
+                    </h3>
+                <pre class="code-modal-body">
+/* Controller handling registration form */
+(function(angular) {
+    angular
+        .module('app')
+        .controller('registerController', function($scope) {
+
+            // function to submit the form after all validation has occurred            
+            $scope.submitForm = function(isValid) {
+            
+                // check to make sure the form is completely valid
+                if (isValid) {
+                    alert('Välkommen som ny kund i vår Gårdsbutik!');
+                }
+
+            };
+
+});
+
+}(this.angular));
+                </pre>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

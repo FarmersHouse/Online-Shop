@@ -1,0 +1,241 @@
+<div class="container-main-content display-inline-block padding-medium">
+    <p class="margin-none padding-none padding-bottom-medium">
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    </p>
+    <div class="visible-lg">
+        <div class="float-left padding-none padding-left-medium">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#/register_html5"><img src="/content/icon/html5_small.png" alt="HTML5"></a></li>
+                <li><a href="#/register_js"><img src="/content/icon/js_small.png" alt="JavaScript"></a></li>
+                <li><a href="#/register_jquery"><img src="/content/icon/jquery_small.png" alt="JQuery"></a></li>
+                <li><a href="#/register_angularjs"><img src="/content/icon/angularjs_small.png" alt="AngularJS"></a></li>
+            </ul>
+        </div>
+        <div class="float-right padding-none padding-right-medium" style="height: 60px;">
+            <div class="display-table">
+                <div class="display-table-cell-bottom">
+                    <input type="button" class="btn btn-default btn-xs" value="Source Code" data-toggle="modal" data-target="#codeModal">
+                    <input type="button" class="btn btn-default btn-xs" value="Info" data-toggle="modal" data-target="#infoModal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-both">
+        <form action"#" onsubmit="SubmitFunctionHTML5()" name="userForm" id="html5" class="text-align-left border border-radius-tabs gray-bgcolor margin-medium padding-medium">
+            <fieldset class="border-none display-block" id="fieldset_text_fields_registration_form">
+                <div class="form-group">
+                    <label>Förnamn *</label>
+                    <!--HTML5 comes with input attributes "placeholder" and "required" used to display instructions inside the input field and to mark an input field as required to submit the form respectively-->
+                    <input type="text" class="form-control border-radius" name="firstname" placeholder="Fyll i ditt förnamn" required>
+                    <p class="help padding-top-xsmall">Glöm inte att fylla i ditt förnamn.</p>
+                </div>
+                <div class="form-group">
+                    <label>Efternamn *</label>
+                    <input type="text" class="form-control border-radius" name="lastname" placeholder="Fyll i ditt efternamn" required>
+                    <p class="help padding-top-xsmall">Glöm inte att fylla i ditt efternamn.</p>
+                </div>
+                <div class="form-group">
+                    <label>Adress *</label>
+                    <input type="text" class="form-control border-radius" name="address" placeholder="Fyll i din adress" required>
+                    <p class="help padding-top-xsmall">Glöm inte att fylla i din adress.</p>
+                </div>
+                <div class="form-group">
+                    <label>Postnummer *</label>
+                    <!--HTML5 comes with input attribute "pattern" to validate the user input against a regular expression pattern-->
+                    <input type="text" class="form-control border-radius" name="postalcode" placeholder="Fyll i ditt postnummer" pattern="\d{3}\s?\d{2}" required>
+                    <p class="help padding-top-xsmall">Fyll i ditt postnummer (fem siffror).</p>
+                </div>
+                <div class="form-group">
+                    <label>Ort *</label>
+                    <input type="text" class="form-control border-radius" name="city" placeholder="Fyll i din hemort" required>
+                    <p class="help padding-top-xsmall">Glöm inte att fylla i din hemort.</p>
+                </div>
+                <div class="form-group">
+                    <label>Telefonnummer </label>
+                    <!--HTML5 comes with input type "tel" prompts iPhone/iPad/Android devices to use dialer keypad instead of standard keyboard-->
+                    <input type="tel" class="form-control border-radius" name="phone_nr" placeholder="Fyll i ditt telefonnummer">
+                </div>
+                <div class="form-group">
+                    <label>E-postadress *</label>
+                    <!--HTML5 comes with input type "email" which, together with the "required"-attribute, provides a native function for validating e-mail addresses-->
+                    <input type="email" class="form-control border-radius form-control-danger" name="email" placeholder="Fyll i din e-postadress" required>
+                    <p class="help padding-top-xsmall">Ogiltig e-postadress.</p>
+                </div>
+                <div class="form-group">
+                    <label>Bekräfta e-postadress *</label>
+                    <!--HTML5 does not provide a way for an input element to compare its value to the value of another input element-->
+                    <input type="email" class="form-control border-radius" name="emailconfirm" placeholder="Bekräfta din e-postadress" required>
+                    <p class="help padding-top-xsmall">Glöm inte bekräfta din e-postadress.</p>
+                </div>
+                <div class="form-group">
+                    <label>Lösenord *</label>
+                    <!--HTML5 comes with input type "password" which obscures the value typed in by the user and prompts the browser to forget about whatever information gets typed into that field-->
+                    <input type="password" class="form-control border-radius" name="password" placeholder="Välj ett lösenord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required>
+                    <p class="help padding-top-xsmall">Lösenordet måste innehålla som minst 8 och som mest 15 tecken, <br>varav minst en stor och en liten bokstav samt en siffra.</p>
+                </div>
+                <div class="form-group">
+                    <label>Bekräfta lösenord *</label>
+                    <!--HTML5 does not provide a way for an input element to compare its value to the value of another input element-->
+                    <input type="password" class="form-control border-radius" name="passwordconfirm" placeholder="Bekräfta ditt lösenord" required>
+                    <p class="help padding-top-xsmall">Glöm inte bekräfta ditt lösenord.</p>
+                </div>
+            </fieldset>
+            <fieldset class="border-none text-align-left form_padding_large">
+                <br><input type="checkbox"> Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. <br>
+                <input type="checkbox" required> Jag accepterar att gårdsbutiken <a href="#">lagrar mina personuppgifter</a>. *<br>
+                <br><p>* = Obligatoriskt fält</p>
+            </fieldset>
+            <fieldset class="border-none text-align-center padding-top-medium">
+                <input type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka">
+                <input type="submit" class="btn btn-warning" name="submit_registration_form" value="Registrera">
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for displaying explanation -->
+<div id="infoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Real-time client-side form validation: HTML5
+                </h2>
+            </div>
+            <div class="modal-body">
+                <p class="padding-small margin-small font-family-arial text-align-justify">
+                    HTML5 offers some of the tools needed for this purpose. Unfortunately, alone it's not enough. We're missing a way of deciding whether or not an input-element
+                    has been touched (like the AngularJS "ng-pristine" class). On top of this we're also missing a way of comparing the user input of different input-elements 
+                    (e.g. e-mail and confirm e-mail) and there's no way to disable the submit button until all required input elements have been filled in/checked. It is also worth
+                    noting that the solution isn't fully compatible with the Chrome Autofill functionality (the Bootstrap "has-success" glyphicons disappears when it is used).
+                    Lines of code (markup languages excluded, inline code included): 0.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for displaying the source code of the page -->
+<div id="codeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="padding-small font-family-garamond">
+                    Source Code
+                </h2>
+            </div>
+            <div class="modal-body text-align-left">
+                <pre class="code-modal-body">
+&ltdiv class="container-main-content display-inline-block padding-medium"&gt
+    &ltp class="margin-none padding-none padding-bottom-medium"&gt
+        Fyll i nedanstående formulär för att registrera dig som ny kund i vår nätbutik! 
+    &lt/p&gt
+    &ltdiv class="visible-lg"&gt
+        &ltdiv class="float-left padding-none padding-left-medium"&gt
+            &ltul class="nav nav-tabs"&gt
+                &ltli class="active"&gt&lta href="#/register_html5"&gt&ltimg src="/content/icon/html5_small.png" alt="HTML5"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_js"&gt&ltimg src="/content/icon/js_small.png" alt="JavaScript"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_jquery"&gt&ltimg src="/content/icon/jquery_small.png" alt="JQuery"&gt&lt/a&gt&lt/li&gt
+                &ltli&gt&lta href="#/register_angularjs"&gt&ltimg src="/content/icon/angularjs_small.png" alt="AngularJS"&gt&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+        &ltdiv class="float-right padding-none padding-right-medium" style="height: 60px;"&gt
+            &ltdiv class="display-table"&gt
+                &ltdiv class="display-table-cell-bottom"&gt
+                    &lt!--&lta target="_blank" href="view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/register_html5.html" class="btn btn-warning btn-xs margin-left-small"&gtVisa sidkälla&lt/a&gt--&gt
+                    &ltinput type="button" class="btn btn-warning btn-xs" value="Sidkälla" data-toggle="modal" data-target="#codeModal"&gt
+                    &lt!--&lta data-toggle="modal" href="view-source:https://online-shop-angular-viktorstarn.c9users.io/specific/register/register_html5.html" data-target="#myModal" class="btn btn-warning btn-xs margin-left-small"&gtVisa sidkälla&lt/a&gt--&gt
+                    &ltinput type="button" class="btn btn-warning btn-xs" value="Förklaring" data-toggle="modal" data-target="#infoModal"&gt
+                &lt/div&gt
+            &lt/div&gt
+        &lt/div&gt
+    &lt/div&gt
+    &ltdiv class="clear-both"&gt
+        &ltform action"#" onsubmit="SubmitFunctionHTML5()" name="userForm" id="html5" class="text-align-left border border-radius-tabs gray-bgcolor margin-medium padding-medium"&gt
+            &ltfieldset class="border-none display-block" id="fieldset_text_fields_registration_form"&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtFörnamn *&lt/label&gt
+                    &lt!--HTML5 comes with input attributes "placeholder" and "required" used to display instructions inside the input field and to mark an input field as required to submit the form respectively--&gt
+                    &ltinput type="text" class="form-control border-radius" name="firstname" placeholder="Fyll i ditt förnamn" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte att fylla i ditt förnamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtEfternamn *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="lastname" placeholder="Fyll i ditt efternamn" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte att fylla i ditt efternamn.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtAdress *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="address" placeholder="Fyll i din adress" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte att fylla i din adress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtPostnummer *&lt/label&gt
+                    &lt!--HTML5 comes with input attribute "pattern" to validate the user input against a regular expression pattern--&gt
+                    &ltinput type="text" class="form-control border-radius" name="postalcode" placeholder="Fyll i ditt postnummer" pattern="\d{3}\s?\d{2}" required&gt
+                    &ltp class="help padding-top-xsmall"&gtFyll i ditt postnummer (fem siffror).&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtOrt *&lt/label&gt
+                    &ltinput type="text" class="form-control border-radius" name="city" placeholder="Fyll i din hemort" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte att fylla i din hemort.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtTelefonnummer &lt/label&gt
+                    &lt!--HTML5 comes with input type "tel" prompts iPhone/iPad/Android devices to use dialer keypad instead of standard keyboard--&gt
+                    &ltinput type="tel" class="form-control border-radius" name="phone_nr" placeholder="Fyll i ditt telefonnummer"&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtE-postadress *&lt/label&gt
+                    &lt!--HTML5 comes with input type "email" which, together with the "required"-attribute, provides a native function for validating e-mail addresses--&gt
+                    &ltinput type="email" class="form-control border-radius form-control-danger" name="email" placeholder="Fyll i din e-postadress" required&gt
+                    &ltp class="help padding-top-xsmall"&gtOgiltig e-postadress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtBekräfta e-postadress *&lt/label&gt
+                    &lt!--HTML5 does not provide a way for an input element to compare its value to the value of another input element--&gt
+                    &ltinput type="email" class="form-control border-radius" name="emailconfirm" placeholder="Bekräfta din e-postadress" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte bekräfta din e-postadress.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtLösenord *&lt/label&gt
+                    &lt!--HTML5 comes with input type "password" which obscures the value typed in by the user and prompts the browser to forget about whatever information gets typed into that field--&gt
+                    &ltinput type="password" class="form-control border-radius" name="password" placeholder="Välj ett lösenord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" required&gt
+                    &ltp class="help padding-top-xsmall"&gtLösenordet måste innehålla som minst 8 och som mest 15 tecken, &ltbr&gtvarav minst en stor och en liten bokstav samt en siffra.&lt/p&gt
+                &lt/div&gt
+                &ltdiv class="form-group"&gt
+                    &ltlabel&gtBekräfta lösenord *&lt/label&gt
+                    &lt!--HTML5 does not provide a way for an input element to compare its value to the value of another input element--&gt
+                    &ltinput type="password" class="form-control border-radius" name="passwordconfirm" placeholder="Bekräfta ditt lösenord" required&gt
+                    &ltp class="help padding-top-xsmall"&gtGlöm inte bekräfta ditt lösenord.&lt/p&gt
+                &lt/div&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-left form_padding_large"&gt
+                &ltbr&gt&ltinput type="checkbox"&gt Jag vill ha gårdsbutikens nyhetsbrev skickat till min angivna e-postadress. &ltbr&gt
+                &ltinput type="checkbox" required&gt Jag accepterar att gårdsbutiken &lta href="#"&gtlagrar mina personuppgifter&lt/a&gt. *&ltbr&gt
+                &ltbr&gt&ltp&gt* = Obligatoriskt fält&lt/p&gt
+            &lt/fieldset&gt
+            &ltfieldset class="border-none text-align-center padding-top-medium"&gt
+                &ltinput type="button" class="btn btn-warning" name="back_button_registration_form" value="Tillbaka"&gt
+                &ltinput type="submit" class="btn btn-warning" name="submit_registration_form" value="Registrera"&gt
+            &lt/fieldset&gt
+        &lt/form&gt
+    &lt/div&gt
+&lt/div&gt
+                </pre>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

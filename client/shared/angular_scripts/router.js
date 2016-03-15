@@ -23,8 +23,17 @@ angular
             .when('/contact', {
                 templateUrl: '/specific/contact/contact.html'
             })
-            .when('/register', {
-                templateUrl: '/specific/register/register.html'
+            .when('/register_html5', {
+                templateUrl: '/specific/register/register_html5.html'
+            })
+            .when('/register_js', {
+                templateUrl: '/specific/register/register_js.html'
+            })
+            .when('/register_jquery', {
+                templateUrl: '/specific/register/register_jquery.html'
+            })
+            .when('/register_angularjs', {
+                templateUrl: '/specific/register/register_angularjs.html'
             })
             .when('/login', {
                 templateUrl: '/specific/login/login.html'

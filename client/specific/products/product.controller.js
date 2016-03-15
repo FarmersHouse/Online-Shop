@@ -8,7 +8,7 @@
         		
         		var modelProducts = function(data){
         			$scope.products = data;
-        		};
+        		}
         
         		
         		$scope.updateProduct = function(product) {
@@ -20,11 +20,11 @@
         		    var newValue = {
     		            _id: product._id,
     		            likes: product.likes
-        		    };
-        		    productService.updateProduct(newValue)
+        		    }
+        		    productService.updateProduct(newValue);
         		        /*.then(function(){console.log("Controller sent update value to service.")})*/
-        		    ;
-        		};
+        		    
+        		}
         		
         		productService.getProducts()
         			.then(modelProducts);
