@@ -1,25 +1,26 @@
+/*jslint node:true*/
+/*jslint nomen:true*/
+/*jslint es5:true*/
+"use strict";
+
 var express = require('express');
 var router = express.Router();
 
+// Set static relative path for content requests
 var path = require('path');
-/* Set static relative path for content requests */
 router.use(express.static(path.join(__dirname, '../../client/')));
 
-/*var product = require(path.resolve('./server/dbapi/product'));*/
+// Set product path
 var product = require(path.resolve('../server/dbapi/product'));
 
-
-/* Site entry point. */
-router.get('/', function(req, res, next) {
-/*res.sendFile(path.resolve('./client/shared/index.html'));*/
-res.sendFile(path.resolve('../client/shared/index.html'));
-
+// Site entry point.
+router.get('/', function (req, res, next) {
+    res.sendFile(path.resolve('../client/shared/index.html'));
 });
 
-/* Alternative entry point. */
-router.get('/index.html', function(req, res){
-/*res.sendFile(path.resolve('./client/shared/index.html'));*/
-res.sendFile(path.resolve('../client/shared/index.html'));
+// Alternative entry point.
+router.get('/index.html', function (req, res) {
+    res.sendFile(path.resolve('../client/shared/index.html'));
 });
 
 // Get all products

@@ -4,7 +4,8 @@ node_modules/
 #Angular core components
 client/components/
 
-
+#nohup
+bin/nohup.out
 
 
 
