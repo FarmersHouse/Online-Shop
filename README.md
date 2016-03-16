@@ -9,6 +9,7 @@ a single page application using routing and templates. AngularJS also sees to it
 needlessly repeated across several HTML-pages. 
 
 [Go to website - http://gardsbutik.tk](http://gardsbutik.tk) <br />
+[Backup dn - http://gardsbutik.cu.cc](http://gardsbutik.cu.cc) <br />
 
 ![Screenshot 1](/screenshot1.png?raw=true "Screenshot 1") <br />
 ![Screenshot 2](/screenshot2.png?raw=true "Screenshot 2") <br />
