@@ -4,7 +4,7 @@
 /* Declare okToSubmitArray. Keeps track of the valid/invalid-status of the form input fields. */
 var okToSubmitArray = [{firstname: false}, {lastname: false}, {address: false}, {postalcode: false}, {city: false}, {email: false}, {emailconfirm: false}, {password: false}, {passwordconfirm: false}, {consent: false}];
 
-/* Define function submitFunction. Invoked by form onsubmit-attribute when user submits form. */
+/* Define function submitFunctionJS. Invoked by form onsubmit-attribute when user submits form. */
 function submitFunctionJS() {
 
     window.alert("Välkommen som ny kund i vår Gårdsbutik!");
