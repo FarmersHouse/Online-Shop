@@ -60,7 +60,7 @@ body {
 #custom-title {
     margin: 0em;
     padding-top: 2.7em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.7em;
     font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
 	font-size: 170%;
     font-weight: normal;
@@ -80,7 +80,8 @@ body {
 
 #custom-nav ul li {
     display: inline-block;
-    padding: 0em 0.5em;
+    /*padding: 0em 0.5em;*/
+    padding: none;
 }
 
 #custom-nav a:hover {
@@ -101,6 +102,7 @@ body {
 .navlink {
     color: black;
     font-size: 1em;
+    /* Animate menu links */
     -webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
@@ -112,7 +114,50 @@ body {
 }
 
 .navlink:active {
-    font-size: 1.0em;
+    font-size: 1em;
+}
+
+#menu {
+    width: 70%;
+    height: 120%
+}
+
+#menu-home {
+    width: 8%;
+    min-width: 4em;
+}
+
+#menu-products {    
+    width: 18%;
+    min-width: 6em;
+}
+
+#menu-philosophy {
+    width: 13%;
+    min-width: 6em;
+}
+
+#menu-about {
+    width: 25%;
+    min-width: 8em;
+}
+
+#menu-contact {
+    width: 10%;
+    min-width: 6em;
+}
+
+#menu-header {
+    min-height: 7.5em;
+    min-width: 100px;
+}
+
+#menu-items {
+    height: 3em;
+}
+
+#menu-items2 {
+    width: 100%;
 }
 
 /* Site skeleton - Footer that flushes down to bottom of page */
@@ -581,6 +626,10 @@ body {
     border-radius: 0em 0.5em 0.5em 0.5em;
 }
 
+.bottom-border {
+    border-bottom: solid 1px #cccccc;
+}
+
 /* Shared markup - Font */
 
 .font-family-arial {
@@ -665,11 +714,20 @@ body {
     vertical-align: bottom;
 }
 
+.display-table-cell-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 /* Shared markup - Paragraphs */
 
 .paragraph-normal {
     margin: 0em;
     text-align: left;
+}
+
+.paragraph-menu-adjusted {
+    width: 70%;
 }
 
 /* Shared markup - Colors */
@@ -697,7 +755,7 @@ body {
 }
 
 .img-padding-left {
-    padding-right: 1.7em;
+    padding-right: 2.4em;
 }
 
 .img-padding-bottom {
@@ -705,7 +763,12 @@ body {
 }
 
 .img-padding-right {
-    padding-left: 1.7em;
+    padding-left: 2.4em;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
 }
 
 
