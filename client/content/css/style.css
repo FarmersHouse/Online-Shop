@@ -119,7 +119,6 @@ body {
 
 #menu {
     width: 70%;
-    height: 120%
 }
 
 #menu-home {
@@ -140,6 +139,11 @@ body {
 #menu-about {
     width: 25%;
     min-width: 8em;
+}
+
+#menu-about2 {
+    width: 5%;
+    min-width: 2em;
 }
 
 #menu-contact {
