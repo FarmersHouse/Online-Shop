@@ -103,14 +103,15 @@ body {
     color: black;
     font-size: 1em;
     /* Animate menu links */
-    -webkit-transition: all .2s ease-in-out;
+/*    -webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;*/
 }
 
 .navlink:hover {
-    font-size: 1.2em;
+    /*font-size: 1.2em;*/
+    font-size: 1em;
 }
 
 .navlink:active {
